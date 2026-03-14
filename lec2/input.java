@@ -10,5 +10,10 @@ public class input {
         
         System.out.println("Your name is: " + name);   
         
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int sum=a+b;
+        System.out.println(sum);
+        
     }
 }
