@@ -6,8 +6,7 @@ public class conditions2 {
         int b=sc.nextInt();
         if(a==b){
             System.out.println("equal");
-        }else{
-            if(a>b){
+        }else if(a>b){
                 System.out.println("a is greater");
             }
             else{
@@ -16,4 +15,4 @@ public class conditions2 {
         }
     }
     
-}
+
