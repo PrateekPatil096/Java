@@ -7,6 +7,18 @@ public class loops {
             System.out.println(j+" ");
 
         }
+        int k=0;
+        while(k<11){
+            System.out.println(k);
+            k++;
+         }
+
+         int h=0;
+         do{
+            System.out.println(h);
+            h++;
+         }while(h<11);
+
     }
     
 }
