@@ -7,6 +7,9 @@ public class strings3 {
         }else{
             System.out.println("strings are not equal");
         }
+        String sentence="my name is toji";
+        String name=sentence.substring(3,8);
+        System.out.println(name);
     }
     
 }
