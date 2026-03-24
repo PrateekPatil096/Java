@@ -18,7 +18,7 @@ public class recursion2_5 {
         }
     }
     public static void main(String[] args) {
-        String str="axbcxxd";
+        String str="axbcxxxxd";
         MoveALLX(str,0,0,"");
     }
 }
