@@ -12,6 +12,6 @@ public class recadv {
     }
     public static void main(String[] args) {
         String str ="abc";
-        printPrem(str, " ");
+        printPrem(str, "");
     }
 }
