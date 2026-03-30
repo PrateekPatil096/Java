@@ -13,7 +13,7 @@ public class recadv2 {
 
     }
     public static void main(String[] args) {
-        int n=3,m=3;
+        int n=3,m=4;
         int totalpaths=countPaths(0, 0, n, m);
         System.out.println(totalpaths);
     }
