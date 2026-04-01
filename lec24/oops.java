@@ -8,6 +8,17 @@ class Pen{
         System.out.println(this.color);
     }
 }
+class Stundent{
+    String name;
+    int age;
+    public void printInfo(){
+        System.out.println(this.name);
+        System.out.println(this.age);
+    }
+    Stundent(){
+        System.out.println("constutor called");
+    }
+}
 
 public class oops {
     public static void main(String[] args) {
@@ -22,6 +33,10 @@ public class oops {
 
         pen1.printcolor();
         pen2.printcolor();
+        Stundent s1=new Stundent();
+        s1.name="toji";
+        s1.age=25;
+        s1.printInfo();
     }   
 
     
