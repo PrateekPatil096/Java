@@ -33,6 +33,7 @@ public class oops {
 
         pen1.printcolor();
         pen2.printcolor();
+        
         Stundent s1=new Stundent();
         s1.name="toji";
         s1.age=25;
