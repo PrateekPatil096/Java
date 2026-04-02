@@ -1,5 +1,8 @@
 abstract class Animal{
     abstract void walk();
+    public void eat(){
+        System.out.println("animal eats");
+    }
 
 }
 class Horse extends Animal{
@@ -16,6 +19,7 @@ public class oops4 {
     public static void main(String[] args) {
         Horse horse=new Horse();
         horse.walk();
+        horse.eat();
     }
     
 }
