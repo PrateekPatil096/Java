@@ -8,6 +8,18 @@ public class arraylists {
         list.add(1);
         list.add(3);
         System.out.println(list);
+
+        int element=list.get(0);
+        System.out.println(element);
+
+        list.add(2,9);
+        System.out.println(list);
+
+        list.set(0,5);
+        System.out.println(list);
+
+        list.remove(3);
+        System.out.println(list);
     }
     
 }
