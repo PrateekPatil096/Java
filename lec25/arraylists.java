@@ -35,6 +35,9 @@ public class arraylists {
 
         list.remove(0);
         System.out.println(list);
+
+        Collections.sort(list);
+        System.out.println(list);
     }
     
 }
