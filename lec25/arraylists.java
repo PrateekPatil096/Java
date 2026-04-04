@@ -5,9 +5,9 @@ public class arraylists {
     public static void main(String[] args) {
         ArrayList<Integer>list=new ArrayList<Integer>();
 
-        list.add(0);
+        list.add(2);
         list.add(1);
-        list.add(3);
+        list.add(5);
         System.out.println(list);
 
         int element=list.get(0);
@@ -31,6 +31,9 @@ public class arraylists {
         System.out.println();
         
         Collections.sort(list);
+        System.out.println(list);
+
+        list.remove(0);
         System.out.println(list);
     }
     
