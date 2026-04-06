@@ -47,6 +47,31 @@ class LL {
         }
         System.out.println("null");
     }
+    public void deleteFirst(){
+        if(head==null){
+            System.out.println("this list is empty");
+            return;
+        }
+        head=head.next;
+    }
+    public void deleteLast(){
+        if(head==null){
+            System.out.println("this list is empty");
+            return;
+        }
+        if(head.next==null){
+            head=null;
+            return;
+        }
+        Node SecondLast=head;
+        Node LastNode=head.next;
+        while(LastNode.next!=null){
+            LastNode=LastNode.next;
+            SecondLast=SecondLast.next;
+        }
+        SecondLast.next=null;
+
+    }
 
     public static void main(String[] args) {
         LL list = new LL();
@@ -59,5 +84,11 @@ class LL {
         list.addLast("list");    
 
         list.printlist();        
+
+        list.addFirst("this");
+        list.printlist();
+
+        list.deleteFirst();
+        list.printlist();
     }
 }
