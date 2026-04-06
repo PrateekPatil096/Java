@@ -90,5 +90,8 @@ class LL {
 
         list.deleteFirst();
         list.printlist();
+
+        list.deleteLast();
+        list.printlist();
     }
 }
