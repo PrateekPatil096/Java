@@ -38,6 +38,12 @@ public class arraylists {
 
         Collections.sort(list);
         System.out.println(list);
+
+        list.add(1,3);
+        System.out.println(list);
+
+        list.set(0,6);
+        System.out.println(list);
     }
     
 }
