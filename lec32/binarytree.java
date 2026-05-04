@@ -90,6 +90,16 @@ public class binarytree {
         }
     }
 }
+
+public static int countofnodes(Node root){
+    if(root==null){
+        return 0; 
+    }
+    int leftNodes=countofnodes(root.left);
+    int rightNodes=countofnodes(root.right);
+
+    return leftNodes+rightNodes+1;
+}
         
     
 
@@ -99,6 +109,6 @@ public class binarytree {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        levelOrder(root);
+        System.out.println(countofnodes(root));
     }
 }
