@@ -109,6 +109,16 @@ public static int sumofnodes(Node root){
 
     return leftSum+rightSum+root.data;
 }
+public static int height(Node root){
+    if(root== null){
+        return 0;
+    }
+    int leftHeight=height(root.left);
+    int rightHeight=height(root.right);
+
+    int myHeight=Math.max(leftHeight,rightHeight)+1;
+    return myHeight;
+}
         
     
 
@@ -118,6 +128,6 @@ public static int sumofnodes(Node root){
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        System.out.println(sumofnodes(root));
+        System.out.println(height(root));
     }
 }
