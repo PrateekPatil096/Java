@@ -100,6 +100,15 @@ public static int countofnodes(Node root){
 
     return leftNodes+rightNodes+1;
 }
+public static int sumofnodes(Node root){
+    if(root==null){
+        return 0;
+    }
+    int leftSum=sumofnodes(root.left);
+    int rightSum=sumofnodes(root.right);
+
+    return leftSum+rightSum+root.data;
+}
         
     
 
@@ -109,6 +118,6 @@ public static int countofnodes(Node root){
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        System.out.println(countofnodes(root));
+        System.out.println(sumofnodes(root));
     }
 }
