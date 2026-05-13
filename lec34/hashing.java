@@ -9,6 +9,8 @@ public class hashing {
         set.add(3);
         set.add(1);
 
+        System.out.println("size of set is"+ set.size());
+
         if(set.contains(1)){
             System.out.println("set contains 1");
         }
