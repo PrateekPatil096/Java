@@ -15,6 +15,11 @@ public class hashing {
         if(!set.contains(6)){
             System.out.println("does not contain");
         }
+
+        set.remove(1);
+        if(!set.contains(1)){
+            System.out.println("does not contain 1");
+        }
     }
 
     
