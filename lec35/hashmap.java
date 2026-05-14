@@ -36,6 +36,8 @@ public class hashmap {
             System.out.println(e.getKey());
             System.out.println(e.getValue());
         }
+        map.remove("china");
+        System.out.println(map);
     }
 
 
