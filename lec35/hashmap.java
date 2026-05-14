@@ -11,6 +11,15 @@ public class hashmap {
         map.put("china",150);
 
         System.out.println(map);
+
+        if(map.containsKey("china")){
+            System.out.println("present");
+        }else{
+            System.out.println("not presemt");
+        }
+
+        System.out.println(map.get("china"));
+        System.out.println(map.get("japan"));
     }
 
     
