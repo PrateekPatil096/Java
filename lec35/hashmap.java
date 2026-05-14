@@ -31,6 +31,11 @@ public class hashmap {
             System.out.print(val+" ");
         }
         System.out.println();
+
+        for(Map.Entry<String,Integer>e:map.entrySet()){
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+        }
     }
 
 
