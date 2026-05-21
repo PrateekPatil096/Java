@@ -48,14 +48,28 @@ public class trie {
 
     return true;
 }
-    public static void main(String[] args) {
-        String words[]={"the","a","there","their","any"};
-        for(int i=0;i<words.length;i++){
-            insert(words[i]);
+public static boolean wordbreak(String key){
+    if(key.length()==0){
+        return true;
+    }
+    for(int i=1;i<=key.length();i++){
+        String firstpart=key.substring(0,i);
+        String secpart=key.substring(i);
+        if(search(firstpart)&& wordbreak(secpart)){
+            return true;
         }
-        System.out.println(search("their"));
-        System.out.println(search("thor"));
-        System.out.println(search("an"));
+    }
+    return false;
+}
+    public static void main(String[] args) {
+        String words[]={"i","like","sam","samsung","mobile"};
+         String key="ilikesamsumg";
+
+         for(int i=0;i<words.length;i++){
+            insert(words[i]);
+         }
+         System.out.println(wordbreak(key));
+        
     }
     
 }
