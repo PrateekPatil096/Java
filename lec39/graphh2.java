@@ -84,6 +84,20 @@ public class graphh2 {
                 dfs(graph, e.dest, vis);
         }
     }
+    public static void printAllPath(ArrayList<Edge>[] graph,boolean vis[],int curr,String path,int tar){
+        if(curr==tar){
+            System.out.println(path);
+            return;
+        }
+        for(int i=0;i<graph[curr].size();i++){
+            Edge e=graph[curr].get(i);
+            if(!vis[e.dest]){
+                vis[curr]=true;
+                printAllPath(graph, vis, e.dest, path+e.dest, tar);
+                vis[curr]=false;
+            }
+        }
+    }
 
     public static void main(String args[]) {
 
@@ -100,13 +114,15 @@ public class graphh2 {
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        boolean vis[] = new boolean[V];
+       // boolean vis[] = new boolean[V];
         // for(int i=0;i<V;i++){
         //     if(vis[i]==false)
         //         bfs(graph, V, vis, i);
         // }
-        dfs(graph, 0, vis);
+       // dfs(graph, 0, vis);
          
-        System.out.println();
+        //System.out.println();
+        int src=0 ,tar=5;
+        printAllPath(graph, new boolean[V], src, "0", tar);
     }
 }
