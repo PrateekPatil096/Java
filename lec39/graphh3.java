@@ -60,6 +60,13 @@ public class graphh3 {
         ArrayList<Edge> graph[] = new ArrayList[V];
 
         createGraph(graph);
-        System.out.println(isCycleDirected(graph, new boolean[V], 0, new boolean[V]));
+        boolean vis []=new boolean[V];
+        boolean res[]=new boolean[V];
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                System.out.println(isCycleDirected(graph, new boolean[V], 0, new boolean[V]));
+            }
+        }
+        
     }
 }
