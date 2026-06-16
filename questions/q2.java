@@ -14,6 +14,8 @@ public class q2 {
         System.out.println("after swapping");
         System.out.println(a);
         System.out.println(b);
+
+        System.out.println("ppp");
     }
     
 }
