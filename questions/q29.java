@@ -1,24 +1,35 @@
 import java.util.*;
+
 public class q29 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("enetr the string");
-        String str=sc.nextLine();
-         
-        int count;
-        for(int i=0;i<str.length();i++){
-            count=0;
-            for(int j=0;j<str.length();j++){
-                if(str.charAt(i)==str.charAt(j)){
-                    count++;
-                }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
             }
-            if(count ==1){
-                System.out.println("first non-repeating "+str.charAt(i));
+        }
+
+        
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (map.get(ch) == 1) {
+                System.out.println("First non-repeating character: " + ch);
                 return;
             }
         }
-        System.out.println("non-repeating ");
+
+        System.out.println("No non-repeating character");
     }
-    
 }
