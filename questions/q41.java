@@ -7,7 +7,7 @@ public class q41 {
 
         student(String name,int age){//constructor parameter
             this.name=name;
-            this.age=a;
+            this.age=age;
         }
         void display(){
             System.out.println(name+" "+age);
