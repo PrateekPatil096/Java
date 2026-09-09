@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class q10 {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
@@ -27,5 +28,29 @@ public class q10 {
             System.out.println(arr[i]+" ");
         }
 
+        linearSearch(arr,size);
+
+
+    }
+
+    public static void linearSearch(int arr[],int size){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the target to search");
+        int target=sc.nextInt();
+        int index=-1;
+        for(int i=0;i<size;i++){
+            if(arr[i]==target){
+                index=i;
+                break;
+            }
+        }
+        if(index!=-1){
+            System.out.println("found and index:" +index);
+
+        }else{
+            System.out.println("element not found");
+        }
+       
+       
     }
 }
