@@ -1,0 +1,329 @@
+import java.util.*;
+public class q57 {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter the first string ");
+        String s1=sc.nextLine();
+        System.out.println("enetr the second string");
+        String s2=sc.nextLine();
+
+        if(s1.length()!=s2.length()){
+                System.out.println("false");
+                return;
+            }
+
+            int []a=new int [256];
+            int []b=new int [256];
+
+            for(int i=0;i<s1.length();i++){
+                if(a[s1.charAt(i)]!=b[s2.charAt(i)]){
+                    System.out.println("false");
+                    return ;
+
+                }
+                a[s1.charAt(i)]=i+1;
+                b[s2.charAt(i)]=i+1;
+            }
+            System.out.println("true");
+
+    }
+    
+}
+
+
+
+
+Isomorphic Strings
+
+Pattern: Hashing / Character Mapping / Bijection
+
+Core Observation:
+
+
+
+
+
+Need a one-to-one mapping from s → t and t → s.
+
+
+
+If s[i] appears again, it must map to same t[i]; vice versa.
+
+
+
+Store last seen index of each char in both strings. If last positions differ at any index → not isomorphic.
+
+Approach 1 — Hash Maps
+
+Idea:
+
+
+
+
+
+Maintain mapS and mapT.
+
+
+
+For each index, check existing mapping; if conflict → false.
+
+
+
+Add mapping if not present.
+
+Time: O(N)
+Space: O(unique chars) ≤ O(256)
+
+Approach 2 — Last Seen Arrays (Optimal)
+
+Key Idea:
+Use two arrays of size 256 to store last seen index of characters in s and t.
+
+Steps:
+
+
+
+
+
+Initialize lastS[256] = {0}, lastT[256] = {0}.
+
+
+
+Loop i from 0 to n-1.
+
+
+
+If lastS[s[i]] != lastT[t[i]] → return false.
+
+
+
+Set lastS[s[i]] = lastT[t[i]] = i + 1.
+
+
+
+Return true.
+
+Time: O(N)
+Space: O(1) — fixed 256 size
+
+Code
+
+bool isIsomorphic(string s, string t) {
+    int lastS[256] = {0}, lastT[256] = {0};
+    
+    for (int i = 0; i < s.size(); i++) {
+        if (lastS[s[i]] != lastT[t[i]]) return false;
+        lastS[s[i]] = lastT[t[i]] = i + 1;
+    }
+    return true;
+}
+
+
+Edge Cases
+
+
+
+
+
+Single character → always true.
+
+
+
+"ab" vs "aa" → false.
+
+
+
+"badc" vs "baba" → false.
+
+
+
+Length mismatch → false, though constraints say equal.
+
+Common Mistakes
+
+
+
+
+
+Checking only s → t mapping, not t → s.
+
+
+
+Using 0 as seen index; use i + 1 or -1.
+
+
+
+Using array size 26 when input may contain more ASCII chars.
+
+Quick Recall
+
+
+
+
+
+Isomorphic = bijective character mapping.
+
+
+
+Use two maps or two last-seen arrays.
+
+
+
+Compare lastS[s[i]] == lastT[t[i]].
+
+
+
+Time: O(N), Space: O(1).
+
+
+
+Main trap: one-way mapping is not enough.
+
+
+
+Isomorphic Strings
+
+Pattern: Hashing / Character Mapping / Bijection
+
+Core Observation:
+
+
+
+
+
+Need a one-to-one mapping from s → t and t → s.
+
+
+
+If s[i] appears again, it must map to same t[i]; vice versa.
+
+
+
+Store last seen index of each char in both strings. If last positions differ at any index → not isomorphic.
+
+Approach 1 — Hash Maps
+
+Idea:
+
+
+
+
+
+Maintain mapS and mapT.
+
+
+
+For each index, check existing mapping; if conflict → false.
+
+
+
+Add mapping if not present.
+
+Time: O(N)
+Space: O(unique chars) ≤ O(256)
+
+Approach 2 — Last Seen Arrays (Optimal)
+
+Key Idea:
+Use two arrays of size 256 to store last seen index of characters in s and t.
+
+Steps:
+
+
+
+
+
+Initialize lastS[256] = {0}, lastT[256] = {0}.
+
+
+
+Loop i from 0 to n-1.
+
+
+
+If lastS[s[i]] != lastT[t[i]] → return false.
+
+
+
+Set lastS[s[i]] = lastT[t[i]] = i + 1.
+
+
+
+Return true.
+
+Time: O(N)
+Space: O(1) — fixed 256 size
+
+Code
+
+bool isIsomorphic(string s, string t) {
+    int lastS[256] = {0}, lastT[256] = {0};
+    
+    for (int i = 0; i < s.size(); i++) {
+        if (lastS[s[i]] != lastT[t[i]]) return false;
+        lastS[s[i]] = lastT[t[i]] = i + 1;
+    }
+    return true;
+}
+
+
+Edge Cases
+
+
+
+
+
+Single character → always true.
+
+
+
+"ab" vs "aa" → false.
+
+
+
+"badc" vs "baba" → false.
+
+
+
+Length mismatch → false, though constraints say equal.
+
+Common Mistakes
+
+
+
+
+
+Checking only s → t mapping, not t → s.
+
+
+
+Using 0 as seen index; use i + 1 or -1.
+
+
+
+Using array size 26 when input may contain more ASCII chars.
+
+Quick Recall
+
+
+
+
+
+Isomorphic = bijective character mapping.
+
+
+
+Use two maps or two last-seen arrays.
+
+
+
+Compare lastS[s[i]] == lastT[t[i]].
+
+
+
+Time: O(N), Space: O(1).
+
+
+
+Main trap: one-way mapping is not enough.
+
