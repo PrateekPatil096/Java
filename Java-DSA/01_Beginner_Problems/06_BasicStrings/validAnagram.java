@@ -21,6 +21,10 @@ public class validAnagram {
 
         System.out.println(Arrays.equals(a, b));
 
+
+
+        
+
     }
     
 }
